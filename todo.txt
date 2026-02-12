@@ -1,0 +1,5 @@
+- Ganti gambar
+  - simpan gambar di assets/images
+  - Reference url gambar di html bagian img src (misal: src="assets/images/yanto.jpg")
+- Ganti kata-kata
+  - fokus di html

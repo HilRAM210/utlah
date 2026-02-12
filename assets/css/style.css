@@ -1,0 +1,141 @@
+@import url("https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins:wght@400;600&display=swap");
+
+:root {
+  --primary-color: #ff7e5f;
+  --secondary-color: #feb47b;
+  --text-color: #333;
+  --bg-color: #fff8f5;
+  --shadow-color: rgba(0, 0, 0, 0.1);
+}
+
+body {
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+  background: linear-gradient(
+    135deg,
+    var(--primary-color),
+    var(--secondary-color)
+  );
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 20px;
+  box-sizing: border-box;
+  overflow-x: hidden;
+}
+
+.card-container {
+  background-color: var(--bg-color);
+  border-radius: 20px;
+  box-shadow: 0 10px 30px var(--shadow-color);
+  padding: 40px;
+  text-align: center;
+  max-width: 500px;
+  width: 100%;
+  transform: scale(0.95);
+  opacity: 0;
+  animation: fadeInCard 1s ease-out 0.5s forwards;
+  position: relative;
+  z-index: 10;
+}
+
+@keyframes fadeInCard {
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.profile-photo {
+  width: 170px;
+  height: 170px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 7px solid #ffffff;
+  box-shadow: 0 5px 15px var(--shadow-color);
+  margin-bottom: 20px;
+  transition: transform 0.3s ease;
+}
+
+.profile-photo:hover {
+  transform: scale(1.08) rotate(5deg);
+}
+
+h1 {
+  font-family: "Pacifico", cursive;
+  color: var(--primary-color);
+  font-size: 2.5em;
+  margin: 0 0 10px 0;
+}
+
+.message {
+  color: var(--text-color);
+  font-size: 1.1em;
+  line-height: 1.6;
+  margin-bottom: 25px;
+}
+
+.sender {
+  font-size: 1.2em;
+  font-weight: 600;
+  color: var(--text-color);
+  margin-top: 30px;
+}
+
+.sender span {
+  font-family: "Pacifico", cursive;
+  color: var(--primary-color);
+  font-weight: normal;
+}
+
+.surprise-button {
+  background: linear-gradient(
+    135deg,
+    var(--primary-color),
+    var(--secondary-color)
+  );
+  color: white;
+  border: none;
+  padding: 12px 25px;
+  border-radius: 30px;
+  font-size: 1em;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(255, 126, 95, 0.4);
+}
+
+.surprise-button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(255, 126, 95, 0.6);
+}
+
+#confetti-canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  pointer-events: none;
+}
+
+@media (max-width: 600px) {
+  .card-container {
+    padding: 25px;
+  }
+
+  .profile-photo {
+    width: 140px;
+    height: 140px;
+  }
+
+  h1 {
+    font-size: 2em;
+  }
+
+  .message {
+    font-size: 1em;
+  }
+}
